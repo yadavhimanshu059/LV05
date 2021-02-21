@@ -20,7 +20,7 @@ bayesFactor(fit.m1, fit.m2)
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+Estimated Bayes factor value indicates evidence in favor of model 1 over model 2
 }
 \value{
 %%  ~Describe the value returned
@@ -45,7 +45,6 @@ bayesFactor(fit.m1, fit.m2)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-
 ## Data
 data = list(effect_gram=rnorm(1000,22,5),
             effect_ungram=rnorm(1000,-22,5))
@@ -66,3 +65,16 @@ fit.model2 <- estimateParameters(data = data,
 
 ## Estimate evidence in favor of model 1 over model 2
 bf <- bayesFactor(fit.model1,fit.model2)
+
+## The function is currently defined as
+function (fit.m1, fit.m2)
+{
+    ML_m1 <- mean(fit.m1$weight/fit.m1$imp_density)
+    ML_m2 <- mean(fit.m2$weight/fit.m2$imp_density)
+    return(ML_m1/ML_m2)
+  }
+}
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

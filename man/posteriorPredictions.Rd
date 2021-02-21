@@ -73,3 +73,18 @@ lfpost <- fit.model$latency_f
 ## Now we can generate posterior predictive distribution
 df.predictions <- posteriorPredictions(posteriors = list(lf=lfpost),
                                         samples = length(lf_post))
+
+## The function is currently defined as
+function (model = "LV05-encoding", posteriors = list(lf = rbeta(100,
+    20, 60)), samples = 100, cores = 1)
+{
+    if (model == "LV05-encoding") {
+        predicted_effect <- posteriorpredict(1, posteriors, samples)
+    }
+    return(predicted_effect)
+  }
+}
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

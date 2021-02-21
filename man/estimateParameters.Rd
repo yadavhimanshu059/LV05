@@ -101,3 +101,21 @@ fit.model <- estimateParameters(data = data,
                                       lf="Normal(mean=0.15,sd=0.03,lb=0.1,ub=1)",
                                       prob="Normal(mean=0,sd=0.2,lb=0,ub=1)"),
                               samples=2000,warmup=1000,chains=4,cores=4)
+
+## The function is currently defined as
+function (model = "LV05-encoding", algorithm = "ABC", freeparams = c("lf"),
+    priors = list(lf = "Normal(0.15,0.03)"), data = list(effect_gram = rnorm(1000,
+        20, 2), effect_ungram = rnorm(1000, -20, 2)), samples = 100,
+    warmup = 50, cores = 1, chains = 1)
+{
+    if (model == "LV05-encoding") {
+        posterior_samples <- estimate(algorithm, freeparams,
+            priors, data, samples, warmup, cores, chains)
+    }
+    return(posterior_samples)
+  }
+}
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

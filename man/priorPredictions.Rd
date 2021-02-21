@@ -67,3 +67,18 @@ priors = list(lf = "Normal(mean=.15, sd=.03, lb=.1, ub=1)",
 
 predictions <- priorPredictions(priors=priors,
                                 samples=2000)
+
+## The function is currently defined as
+function (model = "LV05-encoding", priors = list(lf = "Normal(0.15,0.03)"),
+    samples = 4000, cores = 1)
+{
+    if (model == "LV05-encoding") {
+        predicted_effect <- priorpredict(1, priors, samples)
+    }
+    return(predicted_effect)
+  }
+}
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
