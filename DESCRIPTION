@@ -1,0 +1,10 @@
+Package: LV05
+Type: Package
+Title: LV05 is a package for using Lewis and Vasishth (2005) model of sentence processing. The package includes functions for generating model predictions and estimating model parameters. 
+Version: 0.1.0
+Author: Himanshu Yadav
+Maintainer: The package maintainer <hyadav@uni-potsdam.de>
+Description: Under testing!
+License: None
+Encoding: UTF-8
+LazyData: true
